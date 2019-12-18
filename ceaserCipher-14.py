@@ -6,23 +6,23 @@
 #Cipher" and num is 2 the output should be "Ecguct Ekrjgt".
 
 def main():
-	testString = "Caesar Cipher!"
-	cipherShift = 2
-	encodedStr = cCipher(testString, cipherShift)
-	print(encodedStr)
+	test_string = "Caesar Cipher!"
+	cipher_shift = 2
+	encoded_str = c_cipher(test_string, cipher_shift)
+	print(encoded_str)
 
-def cCipher(inString, num):
-	outString = ""
+def c_cipher(in_string, num):
+	out_string = ""
 	#for each character in the instring check if it is an upper or lower case letter
 	#against the unicode number
-	for character in inString:
+	for character in in_string:
 		if ((ord(character) >= 65 and ord(character) <= 90) or (ord(character) >= 97 and ord(character) <= 122)):
 			#if a letter shift the charater by the cipher number and add to output
-			newCharacter = chr(ord(character) + num)
-			outString += newCharacter
+			new_character = chr(ord(character) + num)
+			out_string += new_character
 		else:
 			#if not add the existing non letter unicode character
-			outString += character
-	return(outString)
+			out_string += character
+	return(out_string)
 
 if __name__ == "__main__": main()
