@@ -8,18 +8,18 @@ import datetime
 def main():
 	today = datetime.date.today()
 	if len(sys.argv) != 1:
-		inputValue = sys.argv[1]
-		reducedStr = re.sub('[/]+','', inputValue)
+		input_value = sys.argv[1]
+		reduced_str = re.sub('[/]+','', input_value)
 
-		inDay = int(str(reducedStr)[0:2])
-		inMonth = str(reducedStr)[2:4]
-		inMonth = int(inMonth.lstrip("0"))
-		inYear = int(str(reducedStr)[4:])
+		in_day = int(str(reduced_str)[0:2])
+		in_month = str(reduced_str)[2:4]
+		in_month = int(in_month.lstrip("0"))
+		in_year = int(str(reduced_str)[4:])
 	try:
-		inputDate = datetime.date(inYear,inMonth,inDay)
+		input_date = datetime.date(in_year,in_month,in_day)
 	except:
 	    print("Invalid date entered")
-	delta = inputDate - today
+	delta = input_date - today
 
 	if delta < datetime.timedelta(days = 0):
 		print("the date is in the past")
